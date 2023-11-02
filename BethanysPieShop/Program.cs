@@ -1,5 +1,11 @@
 // Create a WebApplicationBuilder instance with command-line arguments.
+using BethanysPieShop.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// Register services for the CategoryRepository and PieRepository.
+builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
+builder.Services.AddScoped<IPieRepository, MockPieRepository>();
 
 // Register the services needed for controllers and views.
 builder.Services.AddControllersWithViews();
