@@ -23,7 +23,7 @@ namespace BethanysPieShop.Models
         public decimal Price { get; set; }
 
         // URL for the main image of the pie (nullable).
-        public string? ImgUrl { get; set; }
+        public string? ImageUrl { get; set; }
 
         // URL for a thumbnail image of the pie (nullable).
         public string? ImageThumbnailUrl { get; set; }

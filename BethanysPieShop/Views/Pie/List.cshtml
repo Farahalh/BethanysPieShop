@@ -1,0 +1,25 @@
+﻿@model IEnumerable<BethanysPieShop.Models.Pie>
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta name="viewport" content="width=device-wodth"/>
+		<title>Bethany´s Pie Shop</title>
+	</head>
+	<body>
+	<!-- Display the current category provided in ViewBag. -->
+		<h1>@ViewBag.CurrentCategory</h1>
+	@foreach (var pie in Model)
+	{
+		<div>
+			<!-- Display the name of the pie. -->
+			<h2>@pie.Name</h2>
+			<!-- Display the price of the pie. -->
+			<h3>@pie.Price</h3>
+			<!-- Display the category name of the pie. -->
+			<h4>@pie.Category.CategoryName</h4>
+		</div>
+	}
+</body>
+</html>
