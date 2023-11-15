@@ -24,7 +24,7 @@ if (app.Environment.IsDevelopment())
 }
 
 // Define a route for handling HTTP GET requests at the root URL ("/").
-app.MapGet("/", () => "Hello World!");
+app.MapDefaultControllerRoute();
 
 // Start the application and listen for incoming HTTP requests.
 app.Run();
