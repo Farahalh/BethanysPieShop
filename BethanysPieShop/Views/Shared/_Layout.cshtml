@@ -2,31 +2,49 @@
 
 <html>
 <head>
+    <!-- Set the viewport width to the device width for better responsiveness. -->
     <meta name="viewport" content="width=device-width" />
+
+    <!-- Set the title of the page. -->
     <title>Bethany's Pie Shop</title>
+
+    <!-- Link to the Work Sans font from Google Fonts. -->
     <link href='https://fonts.googleapis.com/css?family=Work+Sans' rel='stylesheet' type='text/css'>
+
+    <!-- Include jQuery and Bootstrap JavaScript libraries. -->
     <script src="~/lib/jquery/jquery.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Link to the site-specific CSS file. -->
     <link href="~/css/site.css" rel="stylesheet" />
+
+    <!-- Set the base URL for resolving relative URLs. -->
     <base href="/" />
 </head>
 <body>
     <div class="container">
+        <!-- Header section -->
         <header>
+            <!-- Navigation bar using Bootstrap styling. -->
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-primary"
                  aria-label="Bethany's Pie Shop navigation header">
                 <div class="container-xl">
+                    <!-- Brand/logo linking to the Home/Index action. -->
                     <a class="navbar-brand" asp-controller="Home" asp-action="Index">
+                        <!-- Bethany's Pie Shop Logo -->
                         <img src="images/bethanys-pie-shop-logo_horiz-white.png" width="151" height="47" class="d-inline-block align-top mb-2 mt-1"
                              alt="Bethany's Pie Shop Logo">
                     </a>
 
+                    <!-- Toggle button for collapsing and expanding the navigation links. -->
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                             aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
+                    <!-- Collapsible navigation links. -->
                     <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <!-- Empty unordered list for future navigation links. -->
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         </ul>
                     </div>
@@ -34,6 +52,7 @@
             </nav>
         </header>
 
+        <!-- Render the body of the page. -->
         @RenderBody()
     </div>
 </body>

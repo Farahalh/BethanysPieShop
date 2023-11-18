@@ -7,8 +7,15 @@
 
 <div class="row row-cols-1 row-cols-md-3 g-4">
 
+    <!-- Iterate through each pie in the Pies property of the view model. -->
 	@foreach (var pie in Model.Pies)
 	{
+
+        <!--
+            Display information about each pie in a card format.
+            The commented-out code inside the loop provides an alternative layout.
+        -->
+
 @* 		<div>
 			<!-- Display the name of the pie. -->
 			<h2>@pie.Name</h2>
@@ -20,16 +27,20 @@
 
         <div class="col">
             <div class="card pie-card">
+                <!-- Display the thumbnail image of the pie. -->
                 <img src="@pie.ImageThumbnailUrl" class="card-img-top" alt="@pie.Name">
                 <div class="card-body pie-button">
                     <h4 class="d-grid">
                     </h4>
 
+                    <!-- Display the name and price of the pie. -->
                     <div class="d-flex justify-content-between mt-2">
                         <h2 class="text-start">
+                            <!-- Create a link to view details of the pie. -->
                             <a class="pie-link">@pie.Name</a>
                         </h2>
                         <h5 class="text-nowrap">
+                            <!-- Display the price of the pie. -->
                             @pie.Price.ToString("c")
                         </h5>
                     </div>

@@ -1,6 +1,8 @@
 // Create a WebApplicationBuilder instance with command-line arguments.
 using BethanysPieShop.Models;
+using Microsoft.EntityFrameworkCore;
 
+// Create a builder for configuring the application.
 var builder = WebApplication.CreateBuilder(args);
 
 // Register services for the CategoryRepository and PieRepository.
@@ -9,6 +11,12 @@ builder.Services.AddScoped<IPieRepository, MockPieRepository>();
 
 // Register the services needed for controllers and views.
 builder.Services.AddControllersWithViews();
+
+// Register the DbContext service for Entity Framework Core to connect to the database.
+builder.Services.AddDbContext<BethanysPieShopDbContext>(options => {
+    options.UseSqlServer(
+        builder.Configuration["ConnectionStrings:BethanysPieShopDbContextConnection"]);
+});
 
 // Build the WebbApplication.
 var app = builder.Build();
